@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.flat {
+  margin-bottom: 0 !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Teko';
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #034870;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.tagline {
+  font-size: 1.6rem;
+  line-height: 1.1;
+  text-transform: none;
+  font-weight: 700;
+  font-family: 'Roboto';
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper__wrap {
+  position: relative;
+  z-index: 20;
+  margin: 1rem;
+  min-height: 100vh;
+  background: #f7fcfe;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+}
+
+.wrapper__content {
+  padding: 1.5rem;
+}
+
+.wrapper__header {
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+
+.logo {
+  transition: transform 375ms ease;
+  max-width: 150px;
+  position: fixed;
+  top: 3rem;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 250px;
+}
+
+.beach {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.beach__sky {
+  height: 60%;
+  background: #c4e2ee;
+}
+
+.beach__night {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+  top: 0;
+  background-color: #f7b42c;
+  background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
+  opacity: 0;
+  transition: opacity 375ms ease;
+}
+
+.beach__water {
+  height: 20%;
+  background-image: linear-gradient(180deg, #2a2a72 0%, #4c90b5 74%);
+}
+
+.beach__sand {
+  height: 20%;
+  background: #fae49e;
+}
+
+.beach__sun {
+  width: 100px;
+  height: 100px;
+  background: #fff38a;
+  border-radius: 50%;
+  position: absolute;
+  top: 1rem;
+  right: -2rem;
+  box-shadow: 0 0 20px rgba(255,255,0,0.45);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 0.5rem;
+}
+
+.map {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
