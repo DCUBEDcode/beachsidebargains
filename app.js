@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const beach = document.getElementById('beach');
   const logo = document.getElementById('logo');
-  const night = document.getElementById('night');
+  const dusk = document.getElementById('dusk');
 
   const scrollToBtns = document.querySelectorAll('.scroll-to');
 
@@ -45,14 +45,15 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const handleScroll = () => raf( () => {
       const scrolled = Math.floor(window.scrollY);
+      const duskTime = 125;
 
       // Start going dusk
-      if (scrolled > 100) {
+      if (scrolled > duskTime) {
         logo.classList.add('logo--hide');
-        night.style.opacity = 1;
+        dusk.style.opacity = 1;
       } else {
         logo.classList.remove('logo--hide');
-        night.style.opacity = 0;
+        dusk.style.opacity = 0;
       }
     })
 
