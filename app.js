@@ -1,21 +1,3 @@
-const beach = document.getElementById('beach');
-const logo = document.getElementById('logo');
-const night = document.getElementById('night');
-
-beach.style.height = window.outerHeight + 'px';
-
-const handleScroll = () => raf( () => {
-    const scrolled = Math.floor(window.scrollY);
-
-    // Start going dusk
-    if (scrolled > 100) {
-      logo.classList.add('logo--hide');
-      night.style.opacity = 1;
-    } else {
-      logo.classList.remove('logo--hide');
-      night.style.opacity = 0;
-    }
-  })
 
 // requestAnimationFrame
 const raf =
@@ -53,6 +35,27 @@ window.addEventListener("DOMContentLoaded", function() {
   var button = document.getElementById("form-button");
   var status = document.getElementById("form-status");
 
+  const beach = document.getElementById('beach');
+  const logo = document.getElementById('logo');
+  const night = document.getElementById('night');
+
+  const scrollToBtns = document.querySelectorAll('.scroll-to');
+
+  beach.style.height = window.outerHeight + 'px';
+
+  const handleScroll = () => raf( () => {
+      const scrolled = Math.floor(window.scrollY);
+
+      // Start going dusk
+      if (scrolled > 100) {
+        logo.classList.add('logo--hide');
+        night.style.opacity = 1;
+      } else {
+        logo.classList.remove('logo--hide');
+        night.style.opacity = 0;
+      }
+    })
+
   // Success and Error functions for after the form is submitted
 
   function success() {
@@ -75,5 +78,16 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
   window.addEventListener('scroll', handleScroll);
+
+  scrollToBtns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const scrollTo = e.target.dataset.scrollTo;
+
+      document.getElementById(scrollTo).scrollIntoView({
+        behavior: 'smooth'
+      });
+    })
+  });
 });
 
