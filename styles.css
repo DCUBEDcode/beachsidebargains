@@ -19,12 +19,91 @@ img {
   max-width: 100%;
 }
 
+.unstyled {
+  list-style: none;
+}
+
+.half {
+  margin-bottom: 0.5rem !important;
+}
+
+.single {
+  margin-bottom: 1rem !important;
+}
+
+.double {
+  margin-bottom: 2rem !important;
+}
+
 .flat {
   margin-bottom: 0 !important;
 }
 
 .text-center {
   text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--centered {
+  justify-content: center;
+}
+
+.bordered {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  color: #333;
+  background: #eee;
+  font-weight: 500;
+  font-family: inherit;
+  border: 0;
+}
+
+.btn--primary {
+  background: #f26b6c;
+  color: #fff;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn i {
+  margin-right: 0.5rem;
+}
+
+.btn--floating {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+.input {
+  background: #fff;
+  font-size: 100%;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  font-family: inherit;
+  border-radius: 0.25rem;
+}
+
+textarea.input {
+  min-height: 100px;
 }
 
 h1,
@@ -58,6 +137,10 @@ h1 {
   font-family: 'Roboto';
 }
 
+.btn + .btn {
+  margin-top: 0.5rem;
+}
+
 .wrapper {
   position: relative;
 }
@@ -70,24 +153,29 @@ h1 {
   background: #f7fcfe;
   overflow: hidden;
   border-radius: 0.25rem;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
 }
 
 .wrapper__content {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .wrapper__header {
   background: #fff;
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   box-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
 .logo {
-  transition: transform 375ms ease;
+  transition: all 600ms ease;
   max-width: 150px;
   position: fixed;
   top: 3rem;
+}
+
+.logo--hide {
+  opacity: 0;
+  transform: translateY(50%);
 }
 
 .header {
@@ -105,16 +193,26 @@ h1 {
   left: 0;
 }
 
+.beach__water,
+.beach__sand {
+  position: absolute;
+  width: 100%;
+}
+
 .beach__sky {
-  height: 60%;
+  height: 100%;
   background: #c4e2ee;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
 }
 
 .beach__night {
   position: absolute;
   width: 100%;
-  height: 60%;
-  z-index: 1;
+  height: 100%;
+  z-index: 6;
   top: 0;
   background-color: #f7b42c;
   background-image: linear-gradient(315deg, #f7b42c 0%, #fc575e 74%);
@@ -123,13 +221,21 @@ h1 {
 }
 
 .beach__water {
+  top: 60%;
   height: 20%;
-  background-image: linear-gradient(180deg, #2a2a72 0%, #4c90b5 74%);
+  /* background-image: linear-gradient(180deg, #2a2a72 0%, #4c90b5 74%); */
+  background-image: url('waves.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
 }
 
 .beach__sand {
+  top: 80%;
   height: 20%;
-  background: #fae49e;
+  background-color: #fae49e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%238c7b45' fill-opacity='0.41' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  z-index: 20;
 }
 
 .beach__sun {
@@ -153,4 +259,36 @@ h1 {
 .map {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
+  position: relative;
+}
+
+.map img {
+  display: block;
+}
+
+.map__btn {
+  width: 60%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -30%;
+  z-index: 50;
+  transform: translateY(40%);
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hours {
+  font-size: 0.875rem;
+}
+
+.hours li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
 }
