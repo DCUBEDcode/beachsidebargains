@@ -37,11 +37,7 @@
               <h2 class="flat">Mother's day at Beachside Bargains</h2>
               <p>Spoil your Mum this Mother’s Day at Beachside Bargains Ballina!</p>
             </div>
-            <div class="hero single">
-              <img src="1.jpg" alt="">
-              <img src="2.jpg" alt="">
-              <img src="3.jpg" alt="">
-              <img src="4.jpg" alt="">
+            <div id="instafeed" class="hero single">
             </div>
             <div class="social bordered">
               <h3 class="half">Follow us on Instagram</h3>
@@ -129,6 +125,14 @@
         </div>
       </div>
     </div>
+    <script src="instafeed.min.js"></script>
     <script src="app.js"></script>
+    <script>
+      const feed = new Instafeed({
+        accessToken: 'IGQVJXTUtKb0dNc0FULVBYVVZAnTElLT0RaaWdUZAC1fNTU0NzZAXRERTR0kxSV85d3ZAjSHRJRVItWkVxeGNRNG0zOVd1WTVpVDlESjFhdFVZANVdtcVRpLVl5UjM1VEgzN1o5cWJzaGZAfdXZAXVy1HM3NtbQZDZD',
+        limit: 5
+      });
+      feed.run();
+    </script>
   </body>
 </html>

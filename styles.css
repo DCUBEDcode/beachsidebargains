@@ -282,6 +282,10 @@ h3 {
   grid-column-gap: 0.5rem;
 }
 
+.hero a:nth-child(5) {
+  display: none;
+}
+
 .map {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
@@ -378,6 +382,10 @@ h3 {
 
   h2 {
     font-size: 2rem;
+  }
+
+  .hero a:nth-child(5) {
+    display: initial;
   }
 
   .mobile-only {
