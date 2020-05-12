@@ -37,6 +37,13 @@
               <h2 class="flat">Mother's day at Beachside Bargains</h2>
               <p>Spoil your Mum this Mother’s Day at Beachside Bargains Ballina!</p>
             </div>
+            <div class="hero" id="instaplaceholder">
+              <a href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+            </div>
             <div id="instafeed" class="hero single">
             </div>
             <div class="social bordered">
@@ -128,9 +135,15 @@
     <script src="instafeed.min.js"></script>
     <script src="app.js"></script>
     <script>
+
+      const hidePlaceholder = () => {
+        document.getElementById('instaplaceholder').style.display = 'none';
+      }
+
       const feed = new Instafeed({
         accessToken: 'IGQVJXTUtKb0dNc0FULVBYVVZAnTElLT0RaaWdUZAC1fNTU0NzZAXRERTR0kxSV85d3ZAjSHRJRVItWkVxeGNRNG0zOVd1WTVpVDlESjFhdFVZANVdtcVRpLVl5UjM1VEgzN1o5cWJzaGZAfdXZAXVy1HM3NtbQZDZD',
-        limit: 5
+        limit: 5,
+        after: hidePlaceholder
       });
       feed.run();
     </script>
