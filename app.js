@@ -64,7 +64,6 @@ window.addEventListener("DOMContentLoaded", function() {
     }
 
     if (scrolled >= (placeholderTop - window.innerHeight) && !feedLoaded) {
-      console.log('happening');
       loadFeed();
     }
 
@@ -109,6 +108,10 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
   window.addEventListener('scroll', handleScroll);
+
+  if (placeholderTop < window.innerHeight) {
+    loadFeed();
+  }
 
   scrollToBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
