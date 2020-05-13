@@ -41,21 +41,52 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const scrollToBtns = document.querySelectorAll('.scroll-to');
 
+  const placeholder = document.getElementById('instaplaceholder');
+
+  const placeholderTop = placeholder.getBoundingClientRect().top;
+  const placeholderHeight = placeholder.offsetHeight;
+
+  let feedLoaded = false;
+
   beach.style.height = window.outerHeight + 'px';
 
   const handleScroll = () => raf( () => {
-      const scrolled = Math.floor(window.scrollY);
-      const duskTime = 125;
+    const scrolled = Math.floor(window.scrollY);
+    const duskTime = 125;
 
-      // Start going dusk
-      if (scrolled > duskTime) {
-        logo.classList.add('logo--hide');
-        dusk.style.opacity = 1;
-      } else {
-        logo.classList.remove('logo--hide');
-        dusk.style.opacity = 0;
-      }
-    })
+    // Start going dusk
+    if (scrolled > duskTime) {
+      logo.classList.add('logo--hide');
+      dusk.style.opacity = 1;
+    } else {
+      logo.classList.remove('logo--hide');
+      dusk.style.opacity = 0;
+    }
+
+    if (scrolled >= (placeholderTop - window.innerHeight) && !feedLoaded) {
+      console.log('happening');
+      loadFeed();
+    }
+
+  })
+
+
+  function loadFeed() {
+    feed.run();
+    feedLoaded = true;
+  }
+
+  function hidePlaceholder() {
+    placeholder.style.display = 'none';
+  }
+
+  const feed = new Instafeed({
+    accessToken: 'IGQVJVWXJsVExPVHJtRnF1dEtMcGRidmg0TFlwOWhOcjRhbXhjUFdsVHktdEFCTUdST2hCaUlxNjk1TFctMk9ObEpISUQ3eDdmdGw4ZAW0yV2o2ckppMFhZAT0JtMzdOVEZAZAVi1UUVk5TnlIUTJodmlxbwZDZD',
+    limit: 5,
+    template: '<div class="hero__thumb"><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></div>',
+    after: hidePlaceholder
+  });
+
 
   // Success and Error functions for after the form is submitted
 
@@ -76,7 +107,6 @@ window.addEventListener("DOMContentLoaded", function() {
     var data = new FormData(form);
     ajax(form.method, form.action, data, success, error);
   });
-
 
   window.addEventListener('scroll', handleScroll);
 
