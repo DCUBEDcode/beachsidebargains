@@ -82,6 +82,7 @@ window.addEventListener("DOMContentLoaded", function() {
   const feed = new Instafeed({
     accessToken: 'IGQVJVWXJsVExPVHJtRnF1dEtMcGRidmg0TFlwOWhOcjRhbXhjUFdsVHktdEFCTUdST2hCaUlxNjk1TFctMk9ObEpISUQ3eDdmdGw4ZAW0yV2o2ckppMFhZAT0JtMzdOVEZAZAVi1UUVk5TnlIUTJodmlxbwZDZD',
     limit: 5,
+    apiTimeout: 10000,
     template: '<div class="hero__thumb"><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></div>',
     after: hidePlaceholder
   });
