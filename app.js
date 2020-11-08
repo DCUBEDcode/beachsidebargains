@@ -80,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   const feed = new Instafeed({
-    accessToken: 'IGQVJVbGltUFhjTXE4bF9DYWxEamU0eWZA0NEtldVNMWkhIYUFzMG5VUGxTTFF2cElzRjRMRkFtRlpIQ3EyUERDUTJvc19YUWtLNVloT0hmOUlwbU8yYWsyNGQxNXR4LUEzMUtXc25iMmdzYW4wV1NSUwZDZD',
+    accessToken: 'IGQVJYY1hhM2ZAtQlFMMFgwMUZAuQ1Jyc285OUhUZAkpjOTV3d1NmLXYwaWh5V25kbU5ibWk3YUtMRUw3TEZAvd0lMd0M5M3Rqd3J2Wkl4MkNzMjlpcmtwdnFtZAS1Td2lXXzNZAVE0tNVM1enJqQ3ZApSXljcgZDZD',
     limit: 5,
     apiTimeout: 10000,
     template: '<div class="hero__thumb"><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></div>',
