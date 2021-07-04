@@ -41,13 +41,6 @@ window.addEventListener("DOMContentLoaded", function() {
 
   const scrollToBtns = document.querySelectorAll('.scroll-to');
 
-  const placeholder = document.getElementById('instaplaceholder');
-
-  const placeholderTop = placeholder.getBoundingClientRect().top;
-  const placeholderHeight = placeholder.offsetHeight;
-
-  let feedLoaded = false;
-
   beach.style.height = window.outerHeight + 'px';
 
   const handleScroll = () => raf( () => {
@@ -63,7 +56,7 @@ window.addEventListener("DOMContentLoaded", function() {
       dusk.style.opacity = 0;
     }
 
-    if (scrolled >= (placeholderTop - window.innerHeight) && !feedLoaded) {
+    if (scrolled >= window.innerHeight && !feedLoaded) {
       loadFeed();
     }
 
@@ -78,15 +71,6 @@ window.addEventListener("DOMContentLoaded", function() {
   function hidePlaceholder() {
     placeholder.style.display = 'none';
   }
-
-  const feed = new Instafeed({
-    accessToken: 'IGQVJVdWhVeHBJOWFpQmoyQVFqaEcyUjNsamszTWhhVHFIWVRFV2RYd2ZApVjJiWUphUC05d3kzdXY0SWQtZAVAtNmk4N3A2LWRHRTFwNGdRX0FyeDI5aGJHbUFsNUFKVFhUTm9SM1BVWW44dWl4aUpEaAZDZD',
-    limit: 5,
-    apiTimeout: 10000,
-    template: '<div class="hero__thumb"><a href="{{link}}"><img title="{{caption}}" src="{{image}}" /></a></div>',
-    after: hidePlaceholder
-  });
-
 
   // Success and Error functions for after the form is submitted
 
@@ -109,10 +93,6 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 
   window.addEventListener('scroll', handleScroll);
-
-  if (placeholderTop < window.innerHeight) {
-    loadFeed();
-  }
 
   scrollToBtns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
